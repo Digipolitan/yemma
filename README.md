@@ -1,5 +1,4 @@
 # Yemma
-
 [![pipeline status](https://gitlab.com/digipolitan/yemma/badges/master/pipeline.svg)](https://gitlab.com/digipolitan/yemma/commits/master)
 
 In a Micro-Service Architecture, you have to handle the proxying, the load, and at least failures.
