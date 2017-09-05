@@ -1,11 +1,19 @@
 global.Action = require('idylle').Action;
-global.utils = require('idylle').Utils;
+global.Request = require('request-promise');
 
 const Core = require('idylle').Core;
-const app  = new Core();
 
-app
-    .on(Core.events.started, app => console.log(`Server listening on port ${app.settings.port}`))
+const registry = new Core();
+
+registry
+    .on(Core.events.init.dependencies, app => ({
+        errorHandler: (req, res, error) => {
+            console.error(error);
+            try { error.reason = JSON.parse(error.reason || error); } catch (Error) { error.reason = null; }
+            res.status(error.code || 500).send(error.reason || error);
+        }
+    }))
+    .on(Core.events.started, core => console.log(`Server listening on port ${core.settings.port}`))
     .start();
 
-module.exports = app;
+module.exports = registry;

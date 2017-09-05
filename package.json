@@ -1,26 +1,67 @@
 {
-  "name": "idylle-default-archetype",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/julien-sarazin/idylle-default-archetype.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/julien-sarazin/idylle-default-archetype/issues"
-  },
-  "homepage": "https://github.com/julien-sarazin/idylle-default-archetype#readme",
-  "dependencies": {
-    "body-parser": "^1.17.2",
-    "idylle": "^2.0.0",
-    "lodash": "latest",
-    "morgan": "^1.8.2"
-  }
+    "name": "lc-gateway",
+    "version": "1.0.6",
+    "engines": {
+        "node": "8.4.0"
+    },
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha $(find . -name '*.specs.js' ! -ipath '*node_modules*') --timeout 20000 --require ./test",
+        "start": "node index.js",
+        "lint": "eslint ."
+    },
+    "author": "",
+    "license": "ISC",
+    "eslintConfig": {
+        "extends": "airbnb",
+        "rules": {
+            "indent": [
+                2,
+                4
+            ],
+            "jsx-a11y/href-no-hash": "off",
+            "camelcase": "off",
+            "no-use-before-define": "off",
+            "no-underscore-dangle": "off",
+            "max-len": "off",
+            "no-undef": "off",
+            "new-cap": "off",
+            "curly": "off",
+            "no-confusing-arrow": "off",
+            "no-trailing-spaces": "off",
+            "comma-dangle": "off",
+            "no-param-reassign": "off",
+            "func-names": [
+                "error",
+                "never"
+            ],
+            "global-require": "off",
+            "no-shadow": "warn",
+            "no-unused-vars": "warn"
+        }
+    },
+    "dependencies": {
+        "eslint": "^4.5.0",
+        "eslint-config-airbnb": "^15.1.0",
+        "eslint-plugin-import": "^2.7.0",
+        "eslint-plugin-jsx-a11y": "^6.0.2",
+        "eslint-plugin-react": "^7.3.0",
+        "bluebird": "^3.5.0",
+        "body-parser": "^1.17.2",
+        "express": "^4.15.3",
+        "idylle": "2.0.9",
+        "lodash": "latest",
+        "mongoose": "^4.10.5",
+        "mongoose-timestamps": "0.0.1",
+        "morgan": "^1.8.2",
+        "request": "^2.81.0",
+        "request-promise": "latest",
+        "mocha": "^3.5.0",
+        "mockgoose": "7.3.1"
+    },
+    "devDependencies": {
+        "chai": "^4.0.2",
+        "chai-as-promised": "^6.0.0"
+    }
 }
