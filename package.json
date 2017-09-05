@@ -12,6 +12,7 @@
         "lint": "eslint ."
     },
     "author": "Julien Sarazin <sarazin.julien@digipolitan.com>",
+    "repository": "https://gitlab.com/digipolitan/yemma.git",
     "license": "ISC",
     "eslintConfig": {
         "extends": "airbnb",
