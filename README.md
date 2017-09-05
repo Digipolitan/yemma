@@ -10,13 +10,13 @@ With **Yemma** those domains are called `Realms` meaning each services who wants
 
 ### Setup
 
-1. In a classic nodeJS project, install the dependency.
+- In a classic nodeJS project, install the dependency.
 
  ```bash
  npm i --save yemma
  ```
 
-2. In your main nodeJS file application (typically index.js) use it like so :
+- In your main nodeJS file application (typically index.js) use it like so :
 
  ```javascript
  const registry = require('yemma');
@@ -26,7 +26,7 @@ With **Yemma** those domains are called `Realms` meaning each services who wants
      .start();
  ```
 
-3. Setup your environment:
+- Setup your environment:
 
  ```bash
  export REGISTRY_DB_URI=mongodb://localhost:27017/yemma
