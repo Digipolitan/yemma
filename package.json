@@ -1,6 +1,6 @@
 {
-    "name": "lc-gateway",
-    "version": "1.0.6",
+    "name": "yemma",
+    "version": "1.0.0",
     "engines": {
         "node": "8.4.0"
     },
@@ -11,7 +11,7 @@
         "start": "node index.js",
         "lint": "eslint ."
     },
-    "author": "",
+    "author": "Julien Sarazin <sarazin.julien@digipolitan.com>",
     "license": "ISC",
     "eslintConfig": {
         "extends": "airbnb",

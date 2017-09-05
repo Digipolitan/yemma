@@ -13,5 +13,6 @@ before((done) => {
         sut.on(Core.events.started, () => {
             done();
         });
+        sut.start();
     });
 });

@@ -1,3 +1,9 @@
+/**
+ * @api {post} /registry/unsubscribe
+ * @description remove a registry entry from requester IP.
+ * @apiGroup Registry
+ * @apiVersion 1.0.0
+ */
 module.exports = (app) => {
     const instances = app.actions.instances;
 
