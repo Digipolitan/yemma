@@ -36,6 +36,7 @@
                 "error",
                 "never"
             ],
+            "no-return-assign": "off",
             "global-require": "off",
             "no-shadow": "warn",
             "no-unused-vars": "warn"
