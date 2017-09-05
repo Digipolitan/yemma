@@ -1,5 +1,6 @@
 process.on('unhandledRejection', () => {}); // workaround about https://github.com/domenic/chai-as-promised/issues/173
 const Dispatcher = require('./Dispatcher');
+
 let dispatcher;
 
 describe('Dispatcher', () => {
@@ -29,11 +30,11 @@ describe('Dispatcher', () => {
         );
 
         it('should fail if no instance available', () =>
-             dispatcher
-                 .next({realm: 'bar'})
-                 .should.be.rejected
-                 .and.eventually.have.property('message', 'service.bar.unavailable')
-         )
+            dispatcher
+                .next({ realm: 'bar' })
+                .should.be.rejected
+                .and.eventually.have.property('message', 'service.bar.unavailable')
+        );
     });
 
     after(() => sut.models.Instance.remove());
