@@ -1,0 +1,6 @@
+{
+    "port": 8080,
+    "logger": {
+        "level": "tiny"
+    }
+}
