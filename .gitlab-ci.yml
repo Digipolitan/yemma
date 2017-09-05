@@ -3,8 +3,6 @@ image: node:8.4.0
 stages:
   - lint
   - test
-  - dockerize
-  - deploy
 
 lint:
   stage: lint
@@ -18,17 +16,3 @@ test:
   - npm install -g mocha
   - npm install
   - npm test
-
-build_image:
-  stage: dockerize
-  image: docker:git
-  services:
-    - docker:dind
-  script:
-    - docker login -u $CI_BUILD_LOGIN -p $CI_BUILD_PASSWORD registry.gitlab.com
-    - docker build -t registry.gitlab.com/libs/registry .
-    - docker push registry.gitlab.com/libs/registry
-  only:
-    - develop
-
-
