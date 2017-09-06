@@ -29,8 +29,8 @@ With **Yemma** those domains are called `Realms` meaning each services who wants
 - Setup your environment:
 
  ```bash
- export REGISTRY_DB_URI=mongodb://localhost:27017/yemma
- export REGISTRY_PORT=6473
+ export YEMMA_DB_URI=mongodb://localhost:27017/yemma
+ export YEMMA_PORT=6473
 ```
 
 ### Behavior
