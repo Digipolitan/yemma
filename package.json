@@ -1,6 +1,6 @@
 {
     "name": "yemma",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "engines": {
         "node": "8.4.0"
     },
