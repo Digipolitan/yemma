@@ -22,7 +22,7 @@ With **Yemma** those domains are called `Realms` meaning each services who wants
  const registry = require('yemma');
 
  registry
-     .on(Core.events.started, core => console.log(`Registry listening on port ${core.settings.port}`))
+     .on(started, core => console.log(`Registry listening on port ${core.settings.port}`))
      .start();
  ```
 
