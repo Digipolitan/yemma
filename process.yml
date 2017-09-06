@@ -1,4 +1,0 @@
-apps:
-  - script : 'npm'
-    args   : 'start'
-    name   : 'MWS:Registry'
