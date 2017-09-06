@@ -1,5 +1,6 @@
 # Yemma
-[![pipeline status](https://gitlab.com/digipolitan/yemma/badges/master/pipeline.svg)](https://gitlab.com/digipolitan/yemma/commits/master)
+[![Build Status](https://travis-ci.org/Digipolitan/yemma.svg?branch=master)](https://travis-ci.org/Digipolitan/yemma)
+[![Test Coverage](https://codeclimate.com/github/Digipolitan/yemma/badges/coverage.svg)](https://codeclimate.com/github/Digipolitan/yemma/coverage)
 
 In a Micro-Service Architecture, you have to handle the proxying, the load, and at least failures.
 One of the mandatory component is a `Registry`.
