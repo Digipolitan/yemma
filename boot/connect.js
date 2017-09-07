@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-module.exports = (app) => {
+module.exports = app => {
     let timeoutId = null;
     return mongoConnect(app);
 

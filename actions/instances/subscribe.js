@@ -1,3 +1,5 @@
+const Action = require('idylle').Action;
+
 class InstanceExistsError extends Error {}
 
 /**

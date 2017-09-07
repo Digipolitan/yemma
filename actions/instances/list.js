@@ -1,3 +1,5 @@
+const Action = require('idylle').Action;
+
 /**
  * @api {get} /registry/statuses
  * @description Get the list of available instances in the registry

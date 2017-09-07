@@ -22,6 +22,7 @@
                 2,
                 4
             ],
+            "no-multi-spaces": "off",
             "jsx-a11y/href-no-hash": "off",
             "camelcase": "off",
             "no-use-before-define": "off",
