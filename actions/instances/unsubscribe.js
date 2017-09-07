@@ -1,3 +1,5 @@
+const Action = require('idylle').Action;
+
 /**
  * @api {post} /registry/unsubscribe
  * @description remove a registry entry from requester IP.

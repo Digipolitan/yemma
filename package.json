@@ -1,6 +1,6 @@
 {
     "name": "yemma",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "engines": {
         "node": "8.4.0"
     },
@@ -22,6 +22,7 @@
                 2,
                 4
             ],
+            "no-multi-spaces": "off",
             "jsx-a11y/href-no-hash": "off",
             "camelcase": "off",
             "no-use-before-define": "off",
