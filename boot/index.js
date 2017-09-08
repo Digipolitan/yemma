@@ -1,1 +1,6 @@
-module.exports = app => require('./connect')(app);
+module.exports = app => init(app);
+
+function init(app) {
+    require('./connect')(app);
+    require('./dispatcher')(app);
+}
