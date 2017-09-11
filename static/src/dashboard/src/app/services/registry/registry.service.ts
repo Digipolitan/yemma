@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http, ResponseContentType} from '@angular/http';
+import { Http, ResponseContentType } from '@angular/http';
 import { APIService } from '../api/api.service';
 import { InstanceData } from '../../models';
 import 'rxjs/add/operator/map';

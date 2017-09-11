@@ -2,19 +2,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { RegistryService } from './services';
+import { DashboardComponent, LoginComponent } from './components';
+import { LoggedInGuard } from './guards';
+import { RegistryService, SessionService } from './services';
 import { HttpModule } from '@angular/http';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [
-    RegistryService
+    RegistryService,
+    SessionService,
+    LoggedInGuard
   ],
   bootstrap: [
     AppComponent
