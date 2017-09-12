@@ -5,7 +5,7 @@ let dispatcher;
 
 describe('Dispatcher', () => {
     before(() => {
-        sut = require('../index');
+        sut = require('../../index');
         dispatcher = new Dispatcher(sut.models.Instance);
         return createInstances();
     });
