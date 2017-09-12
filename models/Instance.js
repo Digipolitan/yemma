@@ -38,6 +38,7 @@ const InstanceSchema = Schema({
 });
 
 InstanceSchema.methods.request = function (path, options) {
+    options = options || {};
     options.uri = `${options.protocol || 'http'}://`;
     options.uri += `${this.uri}`;
     options.uri += `${path}`;
@@ -45,6 +46,7 @@ InstanceSchema.methods.request = function (path, options) {
     options.json = true;
     options.timeout = options.timeout || 3000;
 
+    options.headers = options.headers || {};
     options.headers.host = this.address;
     options.headers['access-token'] = this.access_token;
 
