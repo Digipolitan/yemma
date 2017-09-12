@@ -45,14 +45,15 @@ InstanceSchema.methods.request = function (path, options) {
     options.method = options.method || 'GET';
     options.json = true;
     options.timeout = options.timeout || 3000;
-
+    options.port = options.port || this.port;
     options.headers = options.headers || {};
     options.headers.host = this.address;
     options.headers['access-token'] = this.access_token;
 
     options.qs = options.query;
 
-    return request(options);
+    return request(options)
+        .catch(err => (err.statusCode === 304) ? err.response : Promise.reject(err));
 };
 
 InstanceSchema.index({ address: 1, port: 1 }, { unique: true });
