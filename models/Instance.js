@@ -42,7 +42,7 @@ InstanceSchema.methods.request = function (path, options) {
     options.uri = `${options.protocol || 'http'}://`;
     options.uri += `${this.uri}`;
     options.uri += `${path}`;
-    options.method = 'GET';
+    options.method = options.method || 'GET';
     options.json = true;
     options.timeout = options.timeout || 3000;
 

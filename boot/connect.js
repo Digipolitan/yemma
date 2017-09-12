@@ -9,7 +9,7 @@ module.exports = app => {
         return mongoose
             .connect(app.settings.db.uri, { useMongoClient: true })
             .then(() => clearTimeout(timeoutId))
-            .then(() => console.log(`Connected to ${app.settings.db.uri}.`))
+            .then(() => console.log(`Yemma connected to ${app.settings.db.uri}.`))
             .catch((err) => {
                 console.error(`Connection to ${app.settings.db.uri} failed. \n${err}. \nRetrying...`);
                 timeoutId = setTimeout(mongoConnect, 5000);
