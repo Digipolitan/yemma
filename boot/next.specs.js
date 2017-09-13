@@ -1,10 +1,11 @@
 process.on('unhandledRejection', () => {
 }); // workaround about https://github.com/domenic/chai-as-promised/issues/173
 
+let sut;
+
 describe('.next', () => {
     before(() => {
-        sut = require('../../index');
-        sut.start();
+        sut = require('../index');
         return createInstances();
     });
 

@@ -13,7 +13,7 @@ class ServiceUnavailableError extends Error {
  */
 module.exports = app => {
     app.next = (query) => {
-        return this.Instance.find()
+        return app.models.Instance.find()
             .where(query)
             .sort('updated_at')
             .then(i => i.length > 0 ? i : Promise.reject(new ServiceUnavailableError(503, `service.${query.realm}.unavailable`)))
