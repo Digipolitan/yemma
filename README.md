@@ -40,7 +40,6 @@ To contact an instance you can query the `dispatcher` :
 
 ```javascript
 registry
-    .dispatcher
     .next({ realm: 'user-service' })
     .request({
         method: 'GET',

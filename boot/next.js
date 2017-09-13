@@ -8,20 +8,11 @@ class ServiceUnavailableError extends Error {
 }
 
 /**
- * Dispatch is responsible to :
- *      - balance load via an old fashion round-robin
+ * Basic round robin algorithm fetching the oldest awaken instance
+ * @param query the query matching the instance to target (generally a subdomain or the first path component)
  */
-class Dispatcher {
-    constructor(Instance) {
-        this.Instance = Instance;
-        this.next = this.next.bind(this);
-    }
-
-    /**
-     * Basic round robin algorithm fetching the oldest awaken instance
-     * @param query the query matching the instance to target (generally a subdomain or the first path component)
-     */
-    next(query) {
+module.exports = app => {
+    app.next = (query) => {
         return this.Instance.find()
             .where(query)
             .sort('updated_at')
@@ -36,7 +27,5 @@ class Dispatcher {
         function update(instance) {
             return instance.save();
         }
-    }
-}
-
-module.exports = Dispatcher;
+    };
+};
