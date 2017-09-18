@@ -48,6 +48,9 @@ registry
     .then(response => { .... })
 ```
 
+### Helpers
+If you want to use separate **Host** for your **Gateway** and your registry, you can use [Yemma-Discover](https://github.com/Digipolitan/yemma-discovery)  a small tool helping your gateway to find instances through HTTP requests, or your micro-services to register themeselves.
+
 ### Reference
 [Yemma](http://dragonball.wikia.com/wiki/King_Yemma) is a Demi-God with unsettling existential implications in the Dragon Ball Series.
 All gods in Dragon Ball Z are too busy and not actually caring about anything to keep track of in the **registry** of the dead which is actually Yemma's job.
