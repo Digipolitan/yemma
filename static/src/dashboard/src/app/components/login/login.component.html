@@ -1,3 +1,18 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <div class="text-center">
+    <img id="yemma-img" src="assets/images/king_yemma.png">
+    <p id="yemma-title" class="text-bold">Yemma</p>
+  </div>
+  <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group row">
+      <label for="input-port" class="col-2 col-form-label">Port</label>
+      <div class="col-10">
+        <input type="number" class="form-control" id="input-port" aria-describedby="port-help" placeholder="Enter the port*" formControlName="port">
+      </div>
+      <small id="port-help" class="form-text col-12">Yemma port to access back-end data</small>
+    </div>
+    <div class="row justify-content-center">
+      <input type="submit" class="btn btn-primary submit-button" value="Connect">
+    </div>
+  </form>
+</div>

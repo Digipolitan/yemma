@@ -1,8 +1,12 @@
+import { SessionService } from '../session/session.service';
 
 export abstract class APIService {
 
-  public static buildPath(path: [String]) {
+  constructor(protected sessionService?: SessionService) {
+  }
+
+  public buildPath(path: [String]) {
     const location = window.location;
-    return `${location.protocol}//${location.hostname}:9000/${path.join('/')}`;
+    return `${location.protocol}//${location.hostname}:${this.sessionService.get().port}/${path.join('/')}`;
   }
 }

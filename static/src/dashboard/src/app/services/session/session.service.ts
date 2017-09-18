@@ -21,7 +21,7 @@ export class SessionService {
   public get(): SessionData {
     if (this.session === undefined) {
       const str = localStorage.getItem('session');
-      if (str !== undefined) {
+      if (str !== null) {
         this.session = JSON.parse(str);
       }
     }
