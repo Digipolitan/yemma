@@ -13,6 +13,10 @@ module.exports = (app) => {
 
         .post('/unsubscribe',
             app.actions.instances.unsubscribe.expose()
+        )
+
+        .get('/next',
+            app.actions.instances.next.expose()
         );
 
     app.server.use('/registry', router);

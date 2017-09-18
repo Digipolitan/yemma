@@ -9,5 +9,6 @@
     "db": {
         "uri": "$YEMMA_DB_URI"
     },
+    "access_token": "$YEMMA_TOKEN",
     "dispatch_timeout": 12000
 }
