@@ -1,0 +1,22 @@
+// core overrides
+
+$border-color: $gray-200;
+
+// Navbar
+
+$navbar-brand-width: 200px;
+$navbar-brand-bg: #221d26;
+$navbar-brand-logo: url('../img/logo.png');
+$navbar-brand-logo-size: 50px auto;
+$navbar-brand-border: (
+    bottom: (
+        size: 1px,
+        style: solid,
+        color: darken($gray-800, 10%)
+    )
+);
+
+// Sidebar
+
+$sidebar-width: 200px;
+$mobile-sidebar-width: $sidebar-width;
