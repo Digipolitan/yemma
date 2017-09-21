@@ -36,7 +36,7 @@ With **Yemma** those domains are called `Realms` meaning each services who wants
 
 ### Behavior
 Yemma waits for instances registering themselves to be able to forward requests to the proper realm.
-To contact an instance you can query the `dispatcher` :
+To contact an instance you can query the registry :
 
 ```javascript
 registry
@@ -47,6 +47,9 @@ registry
     })
     .then(response => { .... })
 ```
+
+### Helpers
+If you want to use separate hosts for your **Gateway** and your **Registry**, you can use [Yemma-Discover](https://github.com/Digipolitan/yemma-discovery)  a small tool helping your gateway to find instances through HTTP requests, or your micro-services to register themeselves.
 
 ### Reference
 [Yemma](http://dragonball.wikia.com/wiki/King_Yemma) is a Demi-God with unsettling existential implications in the Dragon Ball Series.
