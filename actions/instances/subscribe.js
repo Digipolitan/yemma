@@ -29,7 +29,8 @@ module.exports = app => Action({
         return findInstance()
             .then(i => i.length === 0 || Promise.reject(new InstanceExistsError()))
             .then(create)
-            .catch(InstanceExistsError, update);
+            .catch(InstanceExistsError, update)
+            .then(context.noContent);
 
         function findInstance() {
             return Instance
@@ -58,13 +59,16 @@ module.exports = app => Action({
                 .update(
                     {
                         address,
-                        port: context.data.port
+                        port: context.data.port,
                     },
                     {
                         timeout: context.data.timeout || app.settings.dispatch_timeout,
-                        realm: context.data.realm
-                    }
-                );
+                        realm: context.data.realm,
+                        ttl: Date.now()
+                    },
+                    { new: true, upsert: true }
+                )
+                .exec();
         }
     }
 });

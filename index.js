@@ -11,5 +11,8 @@ registry.on(Core.events.init.routes,        require('./routes'));
 registry.on(Core.events.init.settings,      require('./settings'));
 registry.on(Core.events.booting,            require('./boot'));
 
+registry.on(Core.events.started,        app => { console.log('registry started', app.settings.port) });
+registry.start();
+
 module.exports = registry;
 
