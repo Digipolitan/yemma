@@ -7,6 +7,7 @@ export abstract class APIService {
 
     public buildPath(path: [String]) {
         const location = window.location;
-        return `${location.protocol}//${location.hostname}:${this.sessionService.get().port}/${path.join('/')}`;
+        const port = this.sessionService.get().port;
+        return `${location.protocol}//${location.hostname}${( port != 80 ? ':' + port : '')}/${path.join('/')}`;
     }
 }
