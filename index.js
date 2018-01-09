@@ -1,8 +1,8 @@
 const Idylle = require('idylle');
-
 const Core = Idylle.Core;
 const registry = new Core();
 registry.events = Core.events;
+
 
 registry.on(Core.events.init.actions,       require('./actions'));
 registry.on(Core.events.init.middlewares,   require('./middlewares'));
