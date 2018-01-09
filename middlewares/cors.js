@@ -1,4 +1,4 @@
-module.exports = app => app.server.use(cors);
+module.exports = app => app.router.use(cors);
 
 function cors(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');

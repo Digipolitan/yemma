@@ -23,5 +23,5 @@ module.exports = (app) => {
             app.actions.instances.next.expose()
         );
 
-    app.server.use('/registry', router);
+    app.router.use('/registry', router);
 };

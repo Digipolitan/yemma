@@ -1,1 +1,1 @@
-module.exports = app => app.server.use(require('morgan')(app.settings.logger));
+module.exports = app => app.router.use(require('morgan')(app.settings.logger));

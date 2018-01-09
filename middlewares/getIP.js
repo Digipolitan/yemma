@@ -1,4 +1,4 @@
-module.exports = app => app.server.use(getIP);
+module.exports = app => app.router.use(getIP);
 
 function getIP(req, res, next) {
     req.ip = req.headers['x-forwarded-for'] ||
