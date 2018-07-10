@@ -5,7 +5,7 @@ module.exports = app => {
 
     return Action({
         rules: [
-            context => (context.data.realm && context.data.port && context.data.access_token) || context.error(400, 'missing.data')
+            context => (context.data.realm && context.data.port) || context.error(400, 'missing.data')
         ],
         execute: (context) => {
             const Instance = app.models.Instance;
