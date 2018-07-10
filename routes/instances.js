@@ -1,27 +1,24 @@
 module.exports = (app) => {
-    const router = app.Router();
 
-    router
-        .get('/statuses',
-            app.middlewares.validateIssuer,
-            app.actions.instances.list.expose()
-        )
+    app.io.on('connection', socket => {
+        if (socket.handshake.query.token !== app.settings.access_token)
+            return socket.disconnect();
 
-        .post('/subscribe',
-            app.middlewares.validateIssuer,
-            app.middlewares.bodyParser.json(),
-            app.actions.instances.subscribe.expose()
-        )
+        const router = new app.routers.IO(socket, '/registry');
 
-        .post('/unsubscribe',
-            app.middlewares.validateIssuer,
-            app.actions.instances.unsubscribe.expose()
-        )
+        router
+            .on('/next',
+                app.middlewares.validateIssuer,
+                app.actions.instances.next.io())
 
-        .get('/next',
-            app.middlewares.validateIssuer,
-            app.actions.instances.next.expose()
-        );
+            .on('/subscribe',
+                app.middlewares.validateIssuer,
+                app.actions.instances.subscribe.io())
 
-    app.router.use('/registry', router);
+            .on('/unsubscribe',
+                app.middlewares.validateIssuer,
+                app.actions.instances.unsubscribe.io());
+
+        new app.routers.IO(socket).on('disconnect', app.actions.instances.unsubscribe.io())
+    });
 };

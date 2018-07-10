@@ -12,39 +12,9 @@
         "start": "node index.js",
         "lint": "eslint ."
     },
-    "author": "Julien Sarazin <sarazin.julien@digipolitan.com>",
+    "author": "Julien Sarazin <sarazin.julien@loginchinese.com>",
     "repository": "https://gitlab.com/digipolitan/yemma.git",
     "license": "ISC",
-    "eslintConfig": {
-        "extends": "airbnb",
-        "rules": {
-            "indent": [
-                2,
-                4
-            ],
-            "no-multi-spaces": "off",
-            "jsx-a11y/href-no-hash": "off",
-            "camelcase": "off",
-            "no-use-before-define": "off",
-            "no-underscore-dangle": "off",
-            "max-len": "off",
-            "no-undef": "off",
-            "new-cap": "off",
-            "curly": "off",
-            "no-confusing-arrow": "off",
-            "no-trailing-spaces": "off",
-            "comma-dangle": "off",
-            "no-param-reassign": "off",
-            "func-names": [
-                "error",
-                "never"
-            ],
-            "no-return-assign": "off",
-            "global-require": "off",
-            "no-shadow": "warn",
-            "no-unused-vars": "warn"
-        }
-    },
     "dependencies": {
         "bluebird": "^3.5.0",
         "body-parser": "^1.17.2",
@@ -54,7 +24,7 @@
         "eslint-plugin-jsx-a11y": "^6.0.2",
         "eslint-plugin-react": "^7.3.0",
         "express": "^4.15.3",
-        "idylle": "2.4.1",
+        "idylle": "2.6.2",
         "lodash": "latest",
         "mocha": "^3.5.0",
         "mockgoose": "7.3.1",
@@ -62,7 +32,8 @@
         "mongoose-timestamps": "0.0.1",
         "morgan": "^1.8.2",
         "request": "^2.81.0",
-        "request-promise": "latest"
+        "request-promise": "latest",
+        "socket.io-client": "latest"
     },
     "devDependencies": {
         "chai": "^4.0.2",

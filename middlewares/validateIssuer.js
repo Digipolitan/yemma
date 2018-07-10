@@ -1,16 +1,9 @@
-module.exports = app => (req, res, next) => {
-    const authorization = req.header('access-token');
-
-    if (!authorization)
-        return unauthorized();
-
-    if (authorization !== app.settings.access_token)
-        return unauthorized();
-
-    return next();
-
-    function unauthorized() {
-        return res.status(401).send({ reason: 'invalid.issuer' });
-    }
+module.exports = app => {
+    return (socket, data) => {
+        return (socket.handshake
+            && socket.handshake.query
+            && socket.handshake.query.token === app.settings.access_token)
+            || Promise.reject(new Error(`invalid issuer ${socket.handshake.address}`));
+    };
 };
 

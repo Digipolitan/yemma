@@ -1,1 +1,5 @@
-module.exports = app => require('./instances')(app);
+module.exports = app => {
+    require('./instances')(app);
+};
+
+
