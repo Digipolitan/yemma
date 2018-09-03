@@ -30,6 +30,11 @@ const InstanceSchema = Schema({
         require: true,
         default: 3000
     },
+    secure: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
     __v: {
         type: Number,
         select: false

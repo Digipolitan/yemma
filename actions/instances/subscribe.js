@@ -12,6 +12,7 @@ module.exports = app => {
             const address = context.data.address || context.socket.handshake.address;
             const port = context.data.port;
             const uid = context.socket.id;
+            const secure = context.data.secure;
             const token = uuid();
 
             return updateOrCreateInstance()
@@ -22,10 +23,10 @@ module.exports = app => {
                     .update(
                         { address, port },
                         {
-                            uid, address, port,
+                            uid, address, port, secure,
                             realm: context.data.realm,
                             timeout: context.data.timeout || app.settings.dispatch_timeout,
-                            access_token: token
+                            access_token: token,
                         },
                         {
                             upsert: true
