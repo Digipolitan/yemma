@@ -6,6 +6,8 @@ module.exports = app => {
     return Action({
         rules: [],
         execute: (context) => {
+            console.log('> Fetching instance for', context.criteria.where.realm);
+
             return Instance
                 .findOne()
                 .where(context.criteria.where)

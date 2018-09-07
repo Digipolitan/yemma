@@ -15,6 +15,8 @@ module.exports = app => {
             const secure = context.data.secure;
             const token = uuid();
 
+            console.log('> Instance ', address, 'for', context.data.realm, 'successfully subscribed.');
+
             return updateOrCreateInstance()
                 .then(() => token);
 

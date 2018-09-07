@@ -1,8 +1,10 @@
 module.exports = (app) => {
 
     app.io.on('connection', socket => {
-        if (socket.handshake.query.token !== app.settings.access_token)
+        if (socket.handshake.query.token !== app.settings.access_token) {
+            console.error('> invalid_token during handshake. disconnecting..');
             return socket.disconnect();
+        }
 
         const router = new app.routers.IO(socket, '/registry');
 
