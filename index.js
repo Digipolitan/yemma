@@ -12,7 +12,5 @@ registry.on(Core.events.init.routes,        require('./routes'));
 registry.on(Core.events.init.settings,      require('./settings'));
 registry.on(Core.events.booting,            require('./boot'));
 
-registry.start();
-
 module.exports = registry;
 
