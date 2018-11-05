@@ -6,6 +6,13 @@ module.exports = (app) => {
             return socket.disconnect();
         }
 
+        socket.on('error', error => console.error(`> Error with ${socket.id}. \n`, error));
+        socket.on('disconnecting', reason => console.warn(`> Socket ${socket.id} disconnecting.. reason: `, reason));
+        socket.on('disconnect', reason => {
+            console.warn(`> Socket ${socket.id} disconnected. reason: `, reason);
+            app.actions.instances.unsubscribe.io()
+        });
+
         const router = new app.routers.IO(socket, '/registry');
 
         router
@@ -20,7 +27,5 @@ module.exports = (app) => {
             .on('/unsubscribe',
                 app.middlewares.validateIssuer,
                 app.actions.instances.unsubscribe.io());
-
-        new app.routers.IO(socket).on('disconnect', app.actions.instances.unsubscribe.io())
     });
 };
